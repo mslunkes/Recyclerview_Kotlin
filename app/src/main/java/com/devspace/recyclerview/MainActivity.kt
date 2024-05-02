@@ -1,5 +1,6 @@
 package com.devspace.recyclerview
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val ivGrid = findViewById<ImageView>(R.id.iv_grid)
         val adapter = ContactListAdapter()
 
+
         rvList.adapter = adapter
         rvList.layoutManager = LinearLayoutManager(this)
         adapter.submitList(contacts)
@@ -43,7 +45,17 @@ class MainActivity : AppCompatActivity() {
         ivList.setOnClickListener{
             rvList.layoutManager = LinearLayoutManager(this)
         }
+        adapter.setOnClickListener { contact ->
+            val intent = Intent(this, ContactDetailsActivity::class.java)
+            intent.putExtra( "name", contact.name)
+            intent.putExtra( "phone", contact.phone)
+            intent.putExtra( "icon", contact.icon)
+            startActivity(intent)
+        }
     }
+
+
+
 }
 
 val contacts = listOf(

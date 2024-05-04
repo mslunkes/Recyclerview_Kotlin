@@ -40,7 +40,6 @@ class ContactDetailsActivity : AppCompatActivity() {
                 putExtra(Intent.EXTRA_TEXT, "$name $phone")
                 type = "text/plain"
             }
-
             val shareIntent = Intent.createChooser(sendIntent, null)
             startActivity(shareIntent)
         }

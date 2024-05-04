@@ -48,7 +48,7 @@
         android:padding="8dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        app:tint="#0000FF"
+        app:tint="#00FFFF"
         android:contentDescription="@null"
         android:src="@drawable/baseline_phone_enabled_24"
         app:layout_constraintEnd_toEndOf="parent"
